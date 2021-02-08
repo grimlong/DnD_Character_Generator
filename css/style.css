@@ -1,0 +1,11 @@
+:root {
+    font-family: Helvetica, Arial, sans-serif;
+    text-align: left;
+    background-color: #102a43;
+    margin-left: 20px;
+}
+
+ul {
+    list-style-type: none;
+    display: inline-flex;
+}

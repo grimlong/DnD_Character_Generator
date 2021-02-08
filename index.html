@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LET'S GO!!</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap">
+</head>
+
+<header>
+  <h1>Let's Make a Character!</h1>
+</header>
+
+
+<body>
+  <main>
+    <div id="stats" class="diceContainer">
+      
+     <button  onclick="rollAttributes('statLine')">Roll Stats</button>
+
+      <div class="diceArea">
+          <p>
+
+           <span id="statLine"></span>  
+
+         </p>
+
+     </div>   
+
+   </div> 
+
+    <div>
+      <div class="statArea">
+        <ul>
+         <button onclick="rollAttribute('str')">Strength</button>
+         <li id="str"></li>  
+     
+         <button onclick="rollAttribute('dex')">Dexterity</button>
+         <il id="dex"></il >  
+  
+          <button onclick="rollAttribute('con')">Constitution</button>
+          <il  id="con"></il >  
+    
+         <button onclick="rollAttribute('int')">Intelligence</button>
+          <il  id="int"></il >  
+     
+          <button onclick="rollAttribute('wis')">Wisdom</button>
+         <il  id="wis"></il >  
+  
+          <button onclick="rollAttribute('cha')">Charisma</button>
+          <il  id="cha"></il >  
+       </ul>
+   </div> 
+   <h2>Pick your Class</h2>
+   <select name="Classes" id="classList"></select>
+    </div>
+
+  </main>
+
+<footer>
+
+</footer>
+  <script src="js/app.js"></script>     
+  <script src="js/diceroller.js"></script>   
+</body>
+</html>
