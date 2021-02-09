@@ -22,7 +22,7 @@
 
       <div class="diceArea">
 
-           <span id="statLine" class="draggable"> </span>  
+           <span id="statLine"> </span>  
 
      </div>   
 
@@ -31,28 +31,38 @@
     <div>
       <div class="statArea">
         <ul>
-         <button onclick="stat('str')">Strength</button>
-         <li id="str" class="dropzone"></li>  
+         <button onclick="useStat('str')">Strength</button>
+         <li id="str"></li>  
      
          <button onclick="rollAttribute('dex')">Dexterity</button>
-         <il id="dex" class="dropzone"></il >  
+         <il id="dex"></il >  
   
           <button onclick="rollAttribute('con')">Constitution</button>
-          <il  id="con" class="dropzone"></il >  
+          <il  id="con"></il >  
     
          <button onclick="rollAttribute('int')">Intelligence</button>
-          <il  id="int" class="dropzone"></il >  
+          <il  id="int"></il >  
      
           <button onclick="rollAttribute('wis')">Wisdom</button>
-         <il  id="wis" class="dropzone"></il >  
+         <il  id="wis"></il >  
   
           <button onclick="rollAttribute('cha')">Charisma</button>
-          <il  id="cha" class="dropzone"></il >  
+          <il  id="cha"></il >  
        </ul>
    </div> 
+
    <h2>Pick your Class</h2>
    <select name="Classes" id="classList"></select>
-    </div>
+  </div>
+
+  <div>
+    <h2>
+      <ul>Hit Die:</ul>
+      <li id="hd"> </li>
+  
+      <ul id="hd">Hit Points:</ul>
+    </h2>
+  </div>
 
   </main>
 

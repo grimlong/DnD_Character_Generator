@@ -30,8 +30,8 @@ ul {
 
 #str,#dex,#con,
 #int,#wis,#cha {
-    height: 1.25em;
-    width: 1.25em;
+    height: 1em;
+    width: 1em;
     border: 1px solid #627d98;
     border-radius: 25%;  
     font-size:5em;
@@ -39,7 +39,7 @@ ul {
     justify-content: center;
     align-items: center;
     background-color: #334e68;
-    margin: 4px;
+    margin: 2px;
     
     
     
@@ -49,9 +49,8 @@ button {
     background-color: #f0f4f8;
     border-radius: 6px;
     border: 1px solid #627d98;
-    
     margin: 1em;
-    padding: 10px;
+    padding: 5px;
     font-size: 1.25em;
     width: 150px;
     cursor: pointer;

@@ -15,3 +15,10 @@ function rollAttributes(att)
     console.log(statBlock);
 
  }
+
+//  function useStat(att){
+//     var container = document.getElementById(att);
+//     statBlock.innerHTML = statBlock[0];
+//     statBlock.splice(1, 1)
+//  }
+ 

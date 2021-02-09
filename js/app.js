@@ -4,104 +4,54 @@ const apiData = {
 }
 
 const {url,_class} = apiData
-const apiUrl = `${url}${_class}`
+const apiClass = `${url}${_class}`
 
 
-fetch(apiUrl)
+fetch(apiClass)
   .then( (data) => data.json() )
   .then( (classes) => _classList(classes))
 
 
-const _classList = (data) => {
+let _classList = (data) => {
 
-  for (i = 0; i < data.results.length; i++){
-  console.log(data.results[i].name)
-  }
+const dtr = data.results
+
+
+  let cList = ["Classes", dtr[0].name, dtr[1].name, dtr[2].name, dtr[3].name,dtr[4].name, dtr[5].name, dtr[6].name, dtr[7].name, dtr[8].name, 
+               dtr[9].name, dtr[10].name, dtr[11].name]
+  
+  // let cList =[];
+  // for (i = 0; i < data.results.length; i++){
+  //     cList.push.apply(cList, data.results[i].name);
+  // }
+
+  var sel = document.getElementById('classList');
+  var fragment = document.createDocumentFragment();
+  
+  cList.forEach(function(cList, index) {
+      var opt = document.createElement('option');
+      opt.innerHTML = cList;
+      opt.value = cList;
+      fragment.appendChild(opt);
+  });
+  
+  sel.appendChild(fragment);
 }
-console.log(apiUrl)
-  // const _classList
-    
+
+
+fetch(apiClass + '/barbarian')
+ .then( (data0) => data0.json())
+ .then( (barb) => barbarian(barb))
+
+let barbarian = (data0) => {
+
+  console.log(data0);
   
-  //   var classes = document.getElementById("classList");
-  //   var option = document.createElement("option");
-
-    // for (i = 0; i < data.results.length; i++) {
-    // option.text = (data.results[0].name);
-    // classes.add(options,classes[i]);
-
-    
-    // }
-  
-    
-    // let dropdown = document.getElementById('classList');
-    // dropdown.length = 0;
-    
-    // let defaultOption = document.createElement('option');
-    // defaultOption.text = 'Choose Class';
-    
-    // dropdown.add(defaultOption);
-    // dropdown.selectedIndex = 0;
-    
-    // const url = 'https://www.dnd5eapi.co/api/classes';
-    
-    // const request = new XMLHttpRequest();
-    // request.open('GET', url, true);
-    
-    // request.onload = function() {
-    //   if (request.status === 200) {
-    //     const data = JSON.parse(request.responseText);
-    //     let option;
-    //     for (let i = 0; i < data.length; i++) {
-    //       option = document.createElement('option');
-    //       option.text = data.results[i].name;
-    //       dropdown.add(option);
-    //     }
-    //    } else {
-    //     // Reached the server, but it returned an error
-    //   }   
-    // }
-    
-    // request.onerror = function() {
-    //   console.error('An error occurred fetching the JSON from ' + url);
-    // };
-    
-    // request.send();
+}
 
 
-// let dropdown = document.getElementById('classList');
-// dropdown.length = 0;
-
-// let defaultOption = document.createElement('option');
-// defaultOption.text = 'Choose Class';
-
-// dropdown.add(defaultOption);
-// dropdown.selectedIndex = 0;
-
-// const url = 'https://www.dnd5eapi.co/api/classes';
-
-// fetch(url)  
-//   .then(  
-//     function(response) {  
-//       if (response.status !== 200) {  
-//         console.warn('Looks like there was a problem. Status Code: ' + 
-//           response.status);  
-//         return;  
-//       }
-
-//       // Examine the text in the response  
-//       response.json().then(function(data) {  
-//         let option;
-    
-//     	for (let i = 0; i < data.length; i++) {
-//           option = document.createElement('option');
-//       	  option.text = data.results[i].name;
-//       	  option.value = data.results[i].abbreviation;
-//       	  dropdown.add(option);
-//     	}    
-//       });  
-//     }  
-//   )  
-//   .catch(function(err) {  
-//     console.error('Fetch Error -', err);  
-//   });
-
+// document.getElementById('classList').addEventListener('change',function (e) {
+//   if (e.target.value == "Barbarian") 
+//   console.log("Barbarian Selected");
+//   console.log(data0)
+//  }
