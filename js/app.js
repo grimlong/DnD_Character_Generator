@@ -1,21 +1,29 @@
 const apiData = {
     url:'https://www.dnd5eapi.co/api/',
     _class: 'Classes',
-
 }
 
 const {url,_class} = apiData
 const apiUrl = `${url}${_class}`
 
+
 fetch(apiUrl)
   .then( (data) => data.json() )
   .then( (classes) => _classList(classes))
 
-  const _classList
+
+const _classList = (data) => {
+
+  for (i = 0; i < data.results.length; i++){
+  console.log(data.results[i].name)
+  }
+}
+console.log(apiUrl)
+  // const _classList
     
   
-    var classes = document.getElementById("classList");
-    var option = document.createElement("option");
+  //   var classes = document.getElementById("classList");
+  //   var option = document.createElement("option");
 
     // for (i = 0; i < data.results.length; i++) {
     // option.text = (data.results[0].name);

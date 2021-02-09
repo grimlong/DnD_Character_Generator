@@ -14,9 +14,4 @@ function rollAttributes(att)
     Result.innerHTML = statBlock;
     console.log(statBlock);
 
- };
-
-
-
-
- 
+ }

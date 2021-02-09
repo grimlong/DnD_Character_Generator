@@ -1,11 +1,69 @@
 :root {
     font-family: Helvetica, Arial, sans-serif;
     text-align: left;
-    background-color: #102a43;
     margin-left: 20px;
+}
+body {
+    background-color: #102a43;
+}
+
+h1,h2 {
+  color:#f0f4f8;
 }
 
 ul {
     list-style-type: none;
     display: inline-flex;
+}
+
+.diceArea {
+    max-width: 155px;
+    text-align: center;
+    height: 15px;
+    display: box;
+    color: #f0f4f8;
+    border: 2px #334e68;
+    margin-left: 1.25em;
+    font-size: larger;
+}
+
+
+#str,#dex,#con,
+#int,#wis,#cha {
+    height: 1.25em;
+    width: 1.25em;
+    border: 1px solid #627d98;
+    border-radius: 25%;  
+    font-size:5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #334e68;
+    margin: 4px;
+    
+    
+    
+}
+
+button {
+    background-color: #f0f4f8;
+    border-radius: 6px;
+    border: 1px solid #627d98;
+    
+    margin: 1em;
+    padding: 10px;
+    font-size: 1.25em;
+    width: 150px;
+    cursor: pointer;
+    transition: all .5s; 
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+    max-width: 1000px;
 }
