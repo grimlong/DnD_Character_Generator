@@ -24,43 +24,61 @@
 
            <span id="statLine"> </span>  
 
+           <ul>
+           <li></li>
+           <div id="stat1" draggable="true"></div>
+           <div id="stat2" draggable="true"></div>
+           <div id="stat3" draggable="true"></div>
+           <div id="stat4" draggable="true"></div>
+           <div id="stat5" draggable="true"></div>
+           <div id="stat6" draggable="true"></div>
+
+          </ul>
+
      </div>   
 
    </div> 
 
-    <div>
-      <div class="statArea">
-        <ul>
-         <button onclick="useStat('str')">Strength</button>
-         <li id="str"></li>  
-     
-         <button onclick="rollAttribute('dex')">Dexterity</button>
-         <il id="dex"></il >  
-  
-          <button onclick="rollAttribute('con')">Constitution</button>
-          <il  id="con"></il >  
-    
-         <button onclick="rollAttribute('int')">Intelligence</button>
-          <il  id="int"></il >  
-     
-          <button onclick="rollAttribute('wis')">Wisdom</button>
-         <il  id="wis"></il >  
-  
-          <button onclick="rollAttribute('cha')">Charisma</button>
-          <il  id="cha"></il >  
-       </ul>
+
+    <div class="statArea">
+
+      <ul> 
+        <li>Strength</li>
+          <div id="str"dropzone="move"></div>
+
+        <il >Dexterity</il >
+          <div id="dex" dropzone="move"></div>
+
+        <il >Constitution</il > 
+          <div id="con" dropzone="move"></div> 
+
+        <il >Intelligence</il >  
+          <div id="int" dropzone="move"></div>
+
+        <il >Wisdom</il >  
+          <div id="wis" dropzone="move"></div>
+
+        <il >Charisma</il > 
+          <div id="cha" dropzone="move"></div> 
+
+      </ul>
+
    </div> 
 
-   <h2>Pick your Class</h2>
    <select name="Classes" id="classList"></select>
   </div>
 
   <div>
     <h2>
-      <ul>Hit Die:</ul>
+
+    <ul>Hit Die:
       <li id="hd"> </li>
+    </ul>
   
-      <ul id="hd">Hit Points:</ul>
+    <ul id="hd">Hit Points:
+      <li id="hp"> </li>
+    </ul>
+
     </h2>
   </div>
 

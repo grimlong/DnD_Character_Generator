@@ -11,10 +11,8 @@ fetch(apiClass)
   .then( (classes) => _classList(classes))
 
 let _classList = (data) => {
-
-const dtr = data.results
   
-let cList =["classes",...dtr.map(x => x.name)];
+let cList =["Choose Your Class:",...data.results.map(x => x.name)];
    
 var sel = document.getElementById('classList');
 var fragment = document.createDocumentFragment();
@@ -29,15 +27,22 @@ cList.forEach(function(cList, index) {
   sel.appendChild(fragment);
 }
 
-fetch(apiClass + '/barbarian')
- .then( (data0) => data0.json())
- .then( (barb) => barbarian(barb))
+// fetch(apiClass + '/barbarian')
+//  .then( (data0) => data0.json())
+//  .then( (barb) => barbarian(barb))
 
-let barbarian = (data0) => {
+// let barbarian = (data0) => {
 
-  console.log(data0);
+//   console.log(data0);
   
-}
+sel.addEventListener("change", );
+
+// object.onchange = classSelect()
+//  {
+//   console.log(classSelect.target.value);
+//  };
+
+
 
 
 // document.getElementById('classList').addEventListener('change',function (e) {
