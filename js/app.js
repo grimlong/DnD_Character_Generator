@@ -14,7 +14,7 @@ let _classList = (data) => {
   
 let cList =["Choose Your Class:",...data.results.map(x => x.name)];
    
-var sel = document.getElementById('classList');
+const sel = document.getElementById('classList');
 var fragment = document.createDocumentFragment();
   
 cList.forEach(function(cList, index) {
@@ -27,26 +27,16 @@ cList.forEach(function(cList, index) {
   sel.appendChild(fragment);
 }
 
-// fetch(apiClass + '/barbarian')
-//  .then( (data0) => data0.json())
-//  .then( (barb) => barbarian(barb))
+function classChoice(){
+  const sel = document.getElementById('classList');
+  let choice = sel.value.toLowerCase();
+  fetch(apiClass + '/' + choice)
+    .then( (data) => data.json())
+    .then( (_class) => classData(_class))
+  let classData = (data) => {
+    const hitDie = document.getElementById('hd');
+    hitDie.innerHTML = data.hit_die;
+    console.log(data.hit_die);
+  }
+}
 
-// let barbarian = (data0) => {
-
-//   console.log(data0);
-  
-sel.addEventListener("change", );
-
-// object.onchange = classSelect()
-//  {
-//   console.log(classSelect.target.value);
-//  };
-
-
-
-
-// document.getElementById('classList').addEventListener('change',function (e) {
-//   if (e.target.value == "Barbarian") 
-//   console.log("Barbarian Selected");
-//   console.log(data0)
-//  }

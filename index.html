@@ -20,7 +20,7 @@
       
      <button  onclick="rollAttributes('statLine')">Roll Stats</button>
 
-      <div class="diceArea">
+      <div class="dragArea1" class="diceArea">
 
            <span id="statLine"> </span>  
 
@@ -40,45 +40,49 @@
    </div> 
 
 
-    <div class="statArea">
+    <div class="dragArea2"  class="statArea">
 
       <ul> 
-        <li>Strength</li>
-          <div id="str"dropzone="move"></div>
+        <li id="strMod" class="mod">Strength</li>
+          <div id="str" draggable="true" dropzone="move"></div>
 
-        <il >Dexterity</il >
-          <div id="dex" dropzone="move"></div>
+        <il id="dexMod" class="mod">Dexterity</il >
+          <div id="dex" draggable="true" dropzone="move"></div>
 
-        <il >Constitution</il > 
-          <div id="con" dropzone="move"></div> 
+        <il id="conMod" class="mod">Constitution</il > 
+          <div id="con" draggable="true" dropzone="move"></div> 
 
-        <il >Intelligence</il >  
-          <div id="int" dropzone="move"></div>
+        <il id="intMod" class="mod">Intelligence</il >  
+          <div id="int" draggable="true" dropzone="move"></div>
 
-        <il >Wisdom</il >  
-          <div id="wis" dropzone="move"></div>
+        <il id="wisMod" class="mod">Wisdom</il >  
+          <div id="wis" draggable="true" dropzone="move"></div>
 
-        <il >Charisma</il > 
-          <div id="cha" dropzone="move"></div> 
+        <il id="chaMod" class="mod">Charisma</il > 
+          <div id="cha" draggable="true" dropzone="move"></div> 
 
       </ul>
 
-   </div> 
-
-   <select name="Classes" id="classList"></select>
+  </div> 
+      <label class="custom-select" for="styledSelect1">
+          <select onchange= "classChoice()" name="Classes" id="classList"></select>
+          
+      </label>
   </div>
 
   <div>
     <h2>
+      <div id="hdBox">
+        <ul>Hit Die:
+          <li id="hd"> </li>
+        </ul>
+      </div>
 
-    <ul>Hit Die:
-      <li id="hd"> </li>
-    </ul>
-  
-    <ul id="hd">Hit Points:
-      <li id="hp"> </li>
-    </ul>
-
+      <div id="hpBox">
+        <ul id="hd">Hit Points:
+          <li id="hp"> </li>
+        </ul>
+      </div>
     </h2>
   </div>
 
@@ -91,3 +95,5 @@
   <script src="js/diceroller.js"></script>   
 </body>
 </html>
+
+<!-- id="styledSelect1" name="options" -->

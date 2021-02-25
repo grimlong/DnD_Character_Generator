@@ -11,16 +11,19 @@ h1,h2,ul,.diceContainer {
   color:#f0f4f8;
 }
 
-
-ul{
-    list-style-type: none;
-}
-
 option:first-child {
     font-style: italic;
 }
 
-/* ul {
+.dragArea1, .dragArea2 {
+    border: 2px solid #627d98;
+    margin: 10px;
+    height: auto;
+    background-color: #102a43;
+    display:flexbox;
+    
+}
+ul {
     list-style-type: none;
     display: inline-flex;
     display: flex;
@@ -29,39 +32,45 @@ option:first-child {
     flex-grow: 0;
     flex-shrink: 0;
     flex-basis: 100%;
-    max-width: 1000px;
-} */
+}
 
-/* .diceArea {
-    max-width: 155px;
-    text-align: center;
-    height: 15px;
-    display: box;
-    color: #f0f4f8;
-    border: 2px #334e68;
-    margin-left: 1.25em;
-    font-size: larger;
-} */
+li {
+    display: flex;
+}
 
 
-/* #str,#dex,#con,
+#stat1, #stat2, #stat3,
+#stat4, #stat5, #stat6 {
+    border: 2px solid #627d98;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #334e68;
+    font-size:3em;
+    margin: auto 20px;
+    padding: 1em;
+    max-width: 100%;
+}
+
+#str,#dex,#con,
 #int,#wis,#cha {
     height: 1em;
     width: 1em;
-    border: 1px solid #627d98;
-    border-radius: 25%;  
-    font-size:5em;
+    border: 2px solid #627d98; 
+    font-size:3em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #334e68;
     margin: 2px;
-} */
+    padding: 1em;
+}
 
 button {
-    background-color: #f0f4f8;
+    color: #f0f4f8;
+    background-color: #102a43;
     border-radius: 6px;
-    border: 1px solid #627d98;
+    border: 2px solid #627d98;
     margin: 1em;
     padding: 5px;
     font-size: 1.25em;
@@ -70,4 +79,54 @@ button {
     transition: all .5s; 
 }
 
+#hdBox, #hpBox {
+    border: 2px solid #627d98;
+    background-color: #102a43;
+    margin: 10px;
+    max-width: 250px;
+}
 
+
+.custom-select {
+    position: relative;
+    display: block;
+    max-width: 400px;
+    min-width: 180px;
+    margin: 0 auto;
+    border: 2px solid #627d98;
+    background-color: #102a43;
+    z-index: 10;
+  }
+  .custom-select select {
+    border: none;
+    outline: none;
+    background: transparent;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    padding: 12px 55px 15px 15px;
+    font-size: 14px;
+    color: #f0f4f8;
+  }
+  .custom-select:after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    line-height: 38px;
+    content: "∨";
+    text-align: center;
+    color: #f0f4f8;
+    font-size: 24px;
+    border-left: 1px solid #334e68;
+    z-index: -1;
+  }
+  
+  select option {
+    background-color: #334e68;
+  }
