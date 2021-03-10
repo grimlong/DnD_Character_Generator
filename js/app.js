@@ -34,9 +34,22 @@ function classChoice(){
     .then( (data) => data.json())
     .then( (_class) => classData(_class))
   let classData = (data) => {
+    console.log(data);
     const hitDie = document.getElementById('hd');
     hitDie.innerHTML = data.hit_die;
-    console.log(data.hit_die);
+   
+    const hitPoints = document.getElementById('hp');
+    let conNum = window.document.getElementById('conBox');
+    let conStat = conNum.children[0].innerText 
+    let conMod = (conStat - 10) / 2;
+    let hp = conMod + data.hit_die;
+    hitPoints.innerHTML = Math.floor(hp);
   }
+
+  
 }
+
+
+  
+
 

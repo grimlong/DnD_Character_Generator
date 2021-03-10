@@ -1,91 +1,129 @@
 :root {
-    font-family: Helvetica, Arial, sans-serif;
-    text-align: left;
-    margin-left: 20px;
-}
+    font-size: 1em;
+    font-family: 'Open Sans';
+    --text-primary: #f0f4f8;
+    --text-secondary: #d9e2ec;
+    --bg-primary: #102a43;
+    --bg-secondary: #627d98;
+    --bg-tertiary: #334e68;
+    --transition-speed: 600ms;
+   }
+    
 body {
+    color:var(--text-primary);
     background-color: #151515;
+    margin: 0;
+    padding: 0;
+  }
+
+/* Scroll Bar -------------------- */
+  
+body::-webkit-scrollbar {
+    width: 0.25rem;
+   }
+    
+  body::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+   }
+    
+  body::-webkit-scrollbar-thumb {
+    background: var(--bg-primary);
+   }
+   
+/* Button -------------------- */
+   
+   button {
+       color: var(--text-primary);
+       background-color: var(--bg-primary);
+       border: 2px solid var(--bg-secondary);
+       margin: 1em;
+       padding: 5px;
+       font-size: 1.25em;
+       width: 150px;
+       cursor: pointer;
+   }
+   
+   button:hover {
+       box-shadow: 0 12px 16px 0 var(--bg-secondary);, 0 17px 50px 0 var(--bg-secondary);
+   }
+   
+   button:active {
+       background-color: var(--bg-primary);
+       box-shadow 0 5px #666;
+       transform: translateY(4px);
+   }
+
+/* Stats and Dice -------------------- */
+   
+  main {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    padding: 1rem;
+   }
+
+h1 {
+  padding:10px;
+  margin: 10px;
 }
 
-h1,h2,ul,.diceContainer {
-  color:#f0f4f8;
+#diceArea, .statContainer, .classContainer, .hpInfo {
+    border: 3px solid var(--bg-secondary);
+    background-color: var(--bg-primary);
+    width: 90%;
+    margin: 10px;
+    padding: 10px;
+    max-width: 642px;
+    min-width: 200px;
 }
+
+#diceArea,#attributes {
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-height: 2rem;
+}
+.statContainer {
+    display: flex;
+}
+
+#stat1, #stat2, #stat3,
+#stat4, #stat5, #stat6 {
+    border: 3px solid var(--bg-secondary);
+    background-color: var(--bg-tertiary);
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px;
+    padding: 10px;
+    min-width: 2rem;
+    min-height: 2rem;
+    max-height: 2rem;
+}
+
+#strBox, #dexBox, #conBox,
+#intBox, #wisBox, #chaBox {
+    border: 3px solid var(--bg-secondary);
+    background-color: var(--bg-primary);
+    margin: 10px;
+    padding: 10px; 
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    min-width: 120px;
+    min-height: 120px;
+    max-height: 120px;
+    max-width: 120px;
+
+}
+
+/* Drop Down Menu -------------------- */
 
 option:first-child {
     font-style: italic;
 }
-
-.dragArea1, .dragArea2 {
-    border: 2px solid #627d98;
-    margin: 10px;
-    height: auto;
-    background-color: #102a43;
-    display:flexbox;
-    
-}
-ul {
-    list-style-type: none;
-    display: inline-flex;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    flex-grow: 0;
-    flex-shrink: 0;
-    flex-basis: 100%;
-}
-
-li {
-    display: flex;
-}
-
-
-#stat1, #stat2, #stat3,
-#stat4, #stat5, #stat6 {
-    border: 2px solid #627d98;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #334e68;
-    font-size:3em;
-    margin: auto 20px;
-    padding: 1em;
-    max-width: 100%;
-}
-
-#str,#dex,#con,
-#int,#wis,#cha {
-    height: 1em;
-    width: 1em;
-    border: 2px solid #627d98; 
-    font-size:3em;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #334e68;
-    margin: 2px;
-    padding: 1em;
-}
-
-button {
-    color: #f0f4f8;
-    background-color: #102a43;
-    border-radius: 6px;
-    border: 2px solid #627d98;
-    margin: 1em;
-    padding: 5px;
-    font-size: 1.25em;
-    width: 150px;
-    cursor: pointer;
-    transition: all .5s; 
-}
-
-#hdBox, #hpBox {
-    border: 2px solid #627d98;
-    background-color: #102a43;
-    margin: 10px;
-    max-width: 250px;
-}
-
 
 .custom-select {
     position: relative;
@@ -93,40 +131,55 @@ button {
     max-width: 400px;
     min-width: 180px;
     margin: 0 auto;
-    border: 2px solid #627d98;
-    background-color: #102a43;
+    border: 2px solid var(--bg-secondary);;
+    background-color:var(--bg-tertiary);
     z-index: 10;
-  }
-  .custom-select select {
+}
+.custom-select select {
     border: none;
     outline: none;
     background: transparent;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    border-radius: 0;
     margin: 0;
     display: block;
     width: 100%;
     padding: 12px 55px 15px 15px;
-    font-size: 14px;
-    color: #f0f4f8;
-  }
-  .custom-select:after {
+    color: var(--text-primary);
+}
+.custom-select:after {
     position: absolute;
     right: 0;
     top: 0;
-    width: 50px;
+    width: 1em;
     height: 100%;
     line-height: 38px;
     content: "∨";
     text-align: center;
-    color: #f0f4f8;
+    color: var(--text-primary);
     font-size: 24px;
-    border-left: 1px solid #334e68;
+    border-left: 1px solid var(--bg-tertiary);
     z-index: -1;
-  }
-  
-  select option {
+}
+
+select option {
     background-color: #334e68;
-  }
+}
+
+/* Hp boxes -------------------- */
+
+.hpInfo {
+    display: grid;
+    grid-row: 1fr 1fr;
+}
+
+#hdBox, #hpBox {
+    border: 3px solid var(--bg-secondary);
+    background-color: var(--bg-primary);
+    margin: 1em;
+    padding: 10px;
+    max-width: 125px;
+    text-align: center;
+}
+

@@ -13,87 +13,62 @@
   <h1>Let's Make a Character!</h1>
 </header>
 
-
 <body>
+
   <main>
-    <div id="stats" class="diceContainer">
-      
-     <button  onclick="rollAttributes('statLine')">Roll Stats</button>
 
-      <div class="dragArea1" class="diceArea">
+     <button  onclick="rollAttributes()">Roll Stats</button>
+        <div class="lists">
+          <div id="diceArea" class="list">
+               <div id="stat1" class="list-item" draggable="true"></div> 
+               <div id="stat2" class="list-item" draggable="true"></div> 
+               <div id="stat3" class="list-item" draggable="true"></div> 
+               <div id="stat4" class="list-item" draggable="true"></div> 
+               <div id="stat5" class="list-item" draggable="true"></div> 
+               <div id="stat6" class="list-item" draggable="true"></div> 
+           </div>
+         </div>  
+     <div class="statContainer">
+        <div id="attributes" class="lists">
+           <div id="strBox" class="list">Strength</div>
+           <div id="dexBox" class="list">Dexterity</div>
+           <div id="conBox" class="list">Constitution</div>
+           <div id="intBox" class="list">Intelligence</div>
+           <div id="wisBox" class="list">Wisdom</div>
+           <div id="chaBox" class="list">Charisma</div>
+       </div>
+     </div> 
 
-           <span id="statLine"> </span>  
-
-           <ul>
-           <li></li>
-           <div id="stat1" draggable="true"></div>
-           <div id="stat2" draggable="true"></div>
-           <div id="stat3" draggable="true"></div>
-           <div id="stat4" draggable="true"></div>
-           <div id="stat5" draggable="true"></div>
-           <div id="stat6" draggable="true"></div>
-
-          </ul>
-
-     </div>   
-
-   </div> 
-
-
-    <div class="dragArea2"  class="statArea">
-
-      <ul> 
-        <li id="strMod" class="mod">Strength</li>
-          <div id="str" draggable="true" dropzone="move"></div>
-
-        <il id="dexMod" class="mod">Dexterity</il >
-          <div id="dex" draggable="true" dropzone="move"></div>
-
-        <il id="conMod" class="mod">Constitution</il > 
-          <div id="con" draggable="true" dropzone="move"></div> 
-
-        <il id="intMod" class="mod">Intelligence</il >  
-          <div id="int" draggable="true" dropzone="move"></div>
-
-        <il id="wisMod" class="mod">Wisdom</il >  
-          <div id="wis" draggable="true" dropzone="move"></div>
-
-        <il id="chaMod" class="mod">Charisma</il > 
-          <div id="cha" draggable="true" dropzone="move"></div> 
-
-      </ul>
-
-  </div> 
+  <div class="classContainer"> 
       <label class="custom-select" for="styledSelect1">
-          <select onchange= "classChoice()" name="Classes" id="classList"></select>
-          
+          <select onchange= "classChoice()" name="Classes" id="classList"></select> 
       </label>
   </div>
 
-  <div>
+  <div class="hpInfo">
     <h2>
       <div id="hdBox">
-        <ul>Hit Die:
-          <li id="hd"> </li>
-        </ul>
+        <p class="label">Hit Die :</p>
+        <p onchange= "hpValue()" id="hd"></p>
       </div>
 
       <div id="hpBox">
-        <ul id="hd">Hit Points:
-          <li id="hp"> </li>
-        </ul>
+        <p class="label">Hit Points :</p>
+        <p id="hp"></p>
       </div>
     </h2>
   </div>
 
   </main>
 
-<footer>
+  <footer>
 
-</footer>
+  </footer>
+
   <script src="js/app.js"></script>     
-  <script src="js/diceroller.js"></script>   
-</body>
-</html>
+  <script src="js/diceroller.js"></script>
+  <script src="js/DnD.js"></script>     
 
-<!-- id="styledSelect1" name="options" -->
+</body>
+
+</html>
